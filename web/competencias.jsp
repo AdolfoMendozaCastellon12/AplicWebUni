@@ -79,7 +79,7 @@
                 
                   <div class="bottom">
                   <button type="button" class="btn btn-success btn-icon"> Aceptar<i class="fa fa-check-square"></i> </button>
-                  <button type="button" class="btn btn-default"onclick="window.location.href='listarcompetencias.jsp'">Cancelar </button>
+                  <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Cancelar </button>
                 </div>
                <!--/form-group-->
               </form>
@@ -94,6 +94,30 @@
       <!--\\\\\\\ container  end \\\\\\-->
         </div>
       
+          
+           <div class="modal fade" id="myModal" role="dialog" >
+    <div class="modal-dialog modal-dialog" >
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h2 class="modal-title">Mensaje de Advertencia <i class="fa fa-exclamation"></i> </h2>
+        </div>
+        <div class="modal-body center"> 
+            <p><h5>¿Estas seguro de que quieres cancelar? 
+                <br>
+              se perderan los cambios realizados
+            </h5>
+   
+        </div>
+        <div class="modal-footer">jsp'"
+            <button type="button" class="btn btn-success btn-icon" data-dismiss="modal" onclick="window.location.href='listarcompetencias.jsp'" > Si <i class="fa fa-check-square"></i></button>
+            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="window.location.href='competencias.jsp'" >No</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
 <script src="js/jquery-2.1.0.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/common-script.js"></script>

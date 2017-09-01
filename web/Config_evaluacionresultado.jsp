@@ -102,7 +102,7 @@
    
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-success btn-icon" data-dismiss="modal"  onclick="window.location.href='listaravanceformacion.jsp'" >Si <i class="fa fa-check-square"></i></button>
+            <button type="button" class="btn btn-success btn-icon" data-dismiss="modal"  onclick="window.location.href='listarevaluacionresultados.jsp'" >Si <i class="fa fa-check-square"></i></button>
             <button type="button" class="btn btn-default" data-dismiss="modal" class="close" >No</button>
         </div>
       </div>

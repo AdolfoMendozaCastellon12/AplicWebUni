@@ -269,7 +269,7 @@ box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.2);}
 
 
 
-.contentpanel{ margin-left:220px;overflow:hidden;position: relative; padding:0px; background-color:#f1f1f1; padding-bottom:21px; min-height:800px;}
+.contentpanel{ margin-left:220px;overflow:hidden;position: relative; padding:0px; background-color:#f1f1f1;  min-height:800px;}
 
 .fixed_header .header_bar{position:fixed; z-index:99;}
 .fixed_header .contentpanel{top:60px;}
