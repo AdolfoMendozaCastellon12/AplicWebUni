@@ -153,20 +153,20 @@
           <li> <a href="listardetalleinforme.jsp" target="formularios"> <i class="fa fa-tasks"></i> DETALLES INFORME </a>
            
           </li>
-          <li> <a href="listarevaluacionresultados.jsp" target="formularios"> <i class="fa fa-book"></i> EVALUACION </a>
+          <li> <a href="evaluacionresultado/listarevaluacionresultados.jsp" target="formularios"> <i class="fa fa-book"></i> EVALUACION </a>
            
           </li>
-          <li> <a href="listarresultadoaprendizaje.jsp" target="formularios"> <i class="fa fa-desktop"></i> RESULTADO APRENDIZAJE </a>
+          <li> <a href="resultadoaprendizaje/listarresultadoaprendizaje.jsp" target="formularios"> <i class="fa fa-desktop"></i> RESULTADO APRENDIZAJE </a>
             
           </li>
           
           <li> <a href="listaravanceformacion.jsp"  target="formularios"> <i class="fa fa-anchor"></i> AVANCES </a>
            
           </li>
-          <li> <a href="listarcompetencias.jsp" target="formularios"> <i class="fa fa-th"></i> COMPETENCIAS </a>
+          <li> <a href="competencias/listarcompetencias.jsp" target="formularios"> <i class="fa fa-th"></i> COMPETENCIAS </a>
             
           </li>
-          <li> <a href="listarempleado.jsp" target="formularios"> <i class="fa fa-users icon"></i> EMPLEADOS </a>
+          <li> <a href="empleado/listarempleado.jsp" target="formularios"> <i class="fa fa-users icon"></i> EMPLEADOS </a>
             
           </li>
           
