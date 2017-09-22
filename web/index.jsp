@@ -138,19 +138,19 @@
       </div>
       <div class="left_nav_slidebar">
         <ul class="nav nav-pills nav-stacked">
-          <li><a href="javascript:void(0);"><i class="fa fa-home"></i> INICIO </a>
+          <li><a href="informe_1.jsp" target="formularios"><i class="fa fa-home"></i> INICIO </a>
            
           </li>
-          <li> <a href="listarinforme.jsp" target="formularios"> <i class="fa fa-edit"></i> INFORME </a>
+          <li> <a href="informe/listarinforme.jsp" target="formularios"> <i class="fa fa-edit"></i> INFORME </a>
            
           </li>
-          <li> <a href="listarprogramaformacion.jsp"  target="formularios"> <i class="fa fa-apple"></i> PROGRAMA FORMACION </a>
+          <li> <a href="programaformacion/listarprogramaformacion.jsp"  target="formularios"> <i class="fa fa-apple"></i> PROGRAMA FORMACION </a>
            
           </li>
-          <li> <a href="listarcompetenciaprograma.jsp"  target="formularios"> <i class="fa fa-folder-open-o"></i> COMP.PROGRAMA</a>
+          <li> <a href="competenciasprograma/listarcompetenciaprograma.jsp"  target="formularios"> <i class="fa fa-folder-open-o"></i> COMP.PROGRAMA</a>
            
           </li>
-          <li> <a href="listardetalleinforme.jsp" target="formularios"> <i class="fa fa-tasks"></i> DETALLES INFORME </a>
+          <li> <a href="detalleinforme/listardetalleinforme.jsp" target="formularios"> <i class="fa fa-tasks"></i> DETALLES INFORME </a>
            
           </li>
           <li> <a href="evaluacionresultado/listarevaluacionresultados.jsp" target="formularios"> <i class="fa fa-book"></i> EVALUACION </a>
@@ -160,7 +160,7 @@
             
           </li>
           
-          <li> <a href="listaravanceformacion.jsp"  target="formularios"> <i class="fa fa-anchor"></i> AVANCES </a>
+          <li> <a href="avanceformacion/listaravanceformacion.jsp"  target="formularios"> <i class="fa fa-anchor"></i> AVANCES </a>
            
           </li>
           <li> <a href="competencias/listarcompetencias.jsp" target="formularios"> <i class="fa fa-th"></i> COMPETENCIAS </a>
@@ -170,10 +170,10 @@
             
           </li>
           
-           <li> <a href="listarnovedades.jsp" target="formularios"> <i class="fa fa-bell"></i> NOVEDADES </a>
+           <li> <a href="novedades/listarnovedades.jsp" target="formularios"> <i class="fa fa-bell"></i> NOVEDADES </a>
            
           </li>
-           <li> <a href="listartipoempleado.jsp" target="formularios"> <i class="fa fa-user"></i> TIPOS DE EMPLEADO  </a>
+           <li> <a href="tipoempleado/listartipoempleado.jsp" target="formularios"> <i class="fa fa-user"></i> TIPOS DE EMPLEADO  </a>
             
           </li>
           <li> <a href="javascript:void(0);"> <i class="fa fa-envelope"></i> MENSAJES </a>
@@ -186,7 +186,7 @@
     <!--\\\\\\\left_nav end \\\\\\-->
     <div class="contentpanel">
       
-        <iframe  width="100%" height="1000px" name="formularios" frameborder="0"  ></iframe>
+        <iframe src="informe_1.jsp" width="100%" height="1000px" name="formularios" frameborder="0"  ></iframe>
 
       </div>
 

@@ -11,14 +11,14 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Tipo Empleado</title>
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
-        <link href="css/font-awesome.css" rel="stylesheet" type="text/css" />
-        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <link href="css/animate.css" rel="stylesheet" type="text/css" />
-        <link href="css/admin.css" rel="stylesheet" type="text/css" />
-        <link href="css/jquerysctipttop.css" rel="stylesheet" type="text/css">
-        <link href="plugins/kalendar/kalendar.css" rel="stylesheet">
-        <link rel="stylesheet" href="plugins/scroll/nanoscroller.css">
-        <link href="plugins/morris/morris.css" rel="stylesheet" />
+        <link href="../css/font-awesome.css" rel="stylesheet" type="text/css" />
+        <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="../css/animate.css" rel="stylesheet" type="text/css" />
+        <link href="../css/admin.css" rel="stylesheet" type="text/css" />
+        <link href="../css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+        <link href="../plugins/kalendar/kalendar.css" rel="stylesheet">
+        <link rel="stylesheet" href="../plugins/scroll/nanoscroller.css">
+        <link href="../plugins/morris/morris.css" rel="stylesheet" />
     </head>
     <body style="background-color: #f1f1f1;">
         <div class="pull-left breadcrumb_admin clear_both">
