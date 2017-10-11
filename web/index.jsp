@@ -21,8 +21,8 @@
         <link rel="stylesheet" href="plugins/scroll/nanoscroller.css">
         <link href="plugins/morris/morris.css" rel="stylesheet" />
     </head>
-    <body>
-        
+    
+<body class="fixed_header left_nav_fixed atm-spmenu-push dark_theme green_thm">        
 
     
     
@@ -38,7 +38,7 @@
         </script>
     
     
-<body class="fixed_header left_nav_fixed atm-spmenu-push dark_theme green_thm">
+
 <div class="wrapper">
   <!--\\\\\\\ wrapper Start \\\\\\-->
   <div class="header_bar">
@@ -141,39 +141,39 @@
           <li><a href="informe_1.jsp" target="formularios"><i class="fa fa-home"></i> INICIO </a>
            
           </li>
-          <li> <a href="informe/listarinforme.jsp" target="formularios"> <i class="fa fa-edit"></i> INFORME </a>
+          <li> <a href="listarinforme.jsp" target="formularios"> <i class="fa fa-edit"></i> INFORME </a>
            
           </li>
-          <li> <a href="programaformacion/listarprogramaformacion.jsp"  target="formularios"> <i class="fa fa-apple"></i> PROGRAMA FORMACION </a>
+          <li> <a href="listarprogramaformacion.jsp"  target="formularios"> <i class="fa fa-apple"></i> PROGRAMA FORMACION </a>
            
           </li>
-          <li> <a href="competenciasprograma/listarcompetenciaprograma.jsp"  target="formularios"> <i class="fa fa-folder-open-o"></i> COMP.PROGRAMA</a>
+          <li> <a href="listarcompetenciaprograma.jsp"  target="formularios"> <i class="fa fa-folder-open-o"></i> COMP.PROGRAMA</a>
            
           </li>
-          <li> <a href="detalleinforme/listardetalleinforme.jsp" target="formularios"> <i class="fa fa-tasks"></i> DETALLES INFORME </a>
+          <li> <a href="listardetalleinforme.jsp" target="formularios"> <i class="fa fa-tasks"></i> DETALLES INFORME </a>
            
           </li>
-          <li> <a href="evaluacionresultado/listarevaluacionresultados.jsp" target="formularios"> <i class="fa fa-book"></i> EVALUACION </a>
+          <li> <a href="listarevaluacionresultados.jsp" target="formularios"> <i class="fa fa-book"></i> EVALUACION </a>
            
           </li>
-          <li> <a href="resultadoaprendizaje/listarresultadoaprendizaje.jsp" target="formularios"> <i class="fa fa-desktop"></i> RESULTADO APRENDIZAJE </a>
+          <li> <a href="listarresultadoaprendizaje.jsp" target="formularios"> <i class="fa fa-desktop"></i> RESULTADO APRENDIZAJE </a>
             
           </li>
           
-          <li> <a href="avanceformacion/listaravanceformacion.jsp"  target="formularios"> <i class="fa fa-anchor"></i> AVANCES </a>
+          <li> <a href="listaravanceformacion.jsp"  target="formularios"> <i class="fa fa-anchor"></i> AVANCES </a>
            
           </li>
-          <li> <a href="competencias/listarcompetencias.jsp" target="formularios"> <i class="fa fa-th"></i> COMPETENCIAS </a>
+          <li> <a href="listarcompetencias.jsp" target="formularios"> <i class="fa fa-th"></i> COMPETENCIAS </a>
             
           </li>
-          <li> <a href="empleado/listarempleado.jsp" target="formularios"> <i class="fa fa-users icon"></i> EMPLEADOS </a>
+          <li> <a href="listarempleado.jsp" target="formularios"> <i class="fa fa-users icon"></i> EMPLEADOS </a>
             
           </li>
           
-           <li> <a href="novedades/listarnovedades.jsp" target="formularios"> <i class="fa fa-bell"></i> NOVEDADES </a>
+           <li> <a href="listarnovedades.jsp" target="formularios"> <i class="fa fa-bell"></i> NOVEDADES </a>
            
           </li>
-           <li> <a href="tipoempleado/listartipoempleado.jsp" target="formularios"> <i class="fa fa-user"></i> TIPOS DE EMPLEADO  </a>
+           <li> <a href="listartipoempleado.jsp" target="formularios"> <i class="fa fa-user"></i> TIPOS DE EMPLEADO  </a>
             
           </li>
           <li> <a href="javascript:void(0);"> <i class="fa fa-envelope"></i> MENSAJES </a>

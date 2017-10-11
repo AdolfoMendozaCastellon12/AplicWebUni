@@ -1,13 +1,9 @@
 <%-- 
-    Document   : tipoempleado
-    Created on : 18/08/2017, 03:00:26 PM
+    Document   : avanceformacion
+    Created on : 16/08/2017, 01:53:41 PM
     Author     : Estudiante
 --%>
 
-<%@page import="java.util.ArrayList"%>
-<%@page import="java.util.List"%>
-<%@page import="com.AplicWebUniSena.modelo.TipoEmpleado"%>
-<%@page import="com.AplicWebUniSena.dao.TipoEmpDaoImpl"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -25,13 +21,10 @@
         <link rel="stylesheet" href="plugins/scroll/nanoscroller.css">
         <link href="plugins/morris/morris.css" rel="stylesheet" />
     </head>
-    <%
-      TipoEmpDaoImpl dao = new TipoEmpDaoImpl();
-      List<TipoEmpleado> listTipoE = new ArrayList();
-      listTipoE = dao.listar();
-      
-   %>
-   <body style="background-image: url(images/descarga.jpg);">
+   
+
+
+    <body style="background-image: url(images/descarga.jpg);">
 
   <!--\\\\\\\ wrapper Start \\\\\\-->
 
@@ -53,50 +46,90 @@
           <div class="block-web">
             <div class="header">
               
-              <h3 class="content-header">CONFIGURAR TIPO EMPLEADO</h3>
+              <h3 class="content-header">CONFIGURAR AVANCE FORMACION</h3>
             </div>
             <div class="porlets-content">
-                <%
-                TipoEmpleado tipoemp = (TipoEmpleado) request.getAttribute("tipoemp");
-                //String id = String.valueOf(prod.getIdCategoria());
-                %>
-                <form action="tipoempsvl" method="get" class="form-horizontal row-border">
-                    <fieldset disabled>
+              <form action="" class="form-horizontal row-border">
                 <div class="form-group">
-                  <label class="col-sm-3 control-label">Codigo Tipo Empleado</label>
+                  <label class="col-sm-3 control-label">Codigo Avance Formacion</label>
                   <div class="col-sm-9">
-                      <input type="text" class="form-control" value='<%= tipoemp.getIdTipoEmp() %>' name="codtipoe">
+                      <input type="text" class="form-control" disabled="">
                   </div>
                 </div><!--/form-group--> 
-                    </fieldset>
-                  <input type="hidden" name="codtipoe" readonly="readonly" value='<%= tipoemp.getIdTipoEmp()%>' />
+
                 <div class="form-group">
-                  <label class="col-sm-3 control-label">Descripción</label>
+                  <label class="col-sm-3 control-label">Código Programa</label>
                   <div class="col-sm-9">
-                      <input type="text" class="form-control" value='<%= tipoemp.getSuc_Descrip()%>' name="descripcion">
+                    <input type="password" class="form-control" disabled="">
                   </div>
                 </div><!--/form-group--> 
                 
-
                 <div class="form-group">
-                  <label class="col-sm-3 control-label">Estado</label>
+                  <label class="col-sm-3 control-label">Guias Preparadas</label>
                   <div class="col-sm-9">
-                      <select name="estado">
-                         <option selected><%= tipoemp.getSuc_Estado()%></option>
-                                <%
-                                    if(tipoemp.getSuc_Estado().equals("Activo")){
-                                        %><option value="Inactivo">Inactivo</option> <%
-                                    }else{
-                                        %><option value="Activo">Activo</option> <%
-                                    }
-                                %>
-                      </select>
+                    <input type="number" class="form-control" placeholder="0">
                   </div>
                 </div><!--/form-group-->
                 
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">Guias Ejecutadas</label>
+                  <div class="col-sm-9">
+                    <input type="number" class="form-control" placeholder="0">
+                  </div>
+                </div><!--/form-group-->
+                
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">Instrumentos Evaluacion Planeados</label>
+                  <div class="col-sm-9">
+                    <input type="number" class="form-control" placeholder="0">
+                  </div>
+                </div><!--/form-group-->
+                
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">Instrumentos Evaluacion Ejecutados</label>
+                  <div class="col-sm-9">
+                    <input type="number" class="form-control" placeholder="0">
+                  </div>
+                </div><!--/form-group-->
+                
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">Juicios Sofia Plus</label>
+                  <div class="col-sm-9">
+                    <input type="number" class="form-control" placeholder="0">
+                  </div>
+                </div><!--/form-group-->
+                
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">Actividades BlackB Evaluadas</label>
+                  <div class="col-sm-9">
+                    <input type="number" class="form-control" placeholder="0">
+                  </div>
+                </div><!--/form-group-->
+                
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">Actas Comité Evaluadas</label>
+                  <div class="col-sm-9">
+                    <input type="number" class="form-control" placeholder="0">
+                  </div>
+                </div><!--/form-group-->
+                
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">Porcentaje Asistencia</label>
+                  <div class="col-sm-9">
+                    <input type="" class="form-control" placeholder="0">
+                  </div>
+                </div><!--/form-group-->
+                
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">Planes Mejoramiento</label>
+                  <div class="col-sm-9">
+                    <input type="number" class="form-control" placeholder="0">
+                  </div>
+                </div><!--/form-group--> 
+                
                 <div class="bottom">
-                  <button type="submit" class="btn btn-success btn-icon" name="btnActualizar" value="Actualizar"> Actualizar<i class="fa fa-check-square"></i> </button>
-                  <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal"> Cancelar</button>
+                  <button type="button" class="btn btn-success btn-icon"> Aceptar<i class="fa fa-check-square"></i> </button>
+                  <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Cancelar</button>
                 </div>
                <!--/form-group-->
               </form>
@@ -110,7 +143,11 @@
        
       <!--\\\\\\\ container  end \\\\\\-->
         </div>
-      <div class="modal fade" id="myModal" role="dialog" >
+          
+          
+          <!-- Modal -->
+  
+  <div class="modal fade" id="myModal" role="dialog" >
     <div class="modal-dialog modal-dialog" >
       <div class="modal-content">
         <div class="modal-header">
@@ -125,13 +162,16 @@
    
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-success btn-icon" data-dismiss="modal" onclick="window.location.href='listartipoempleado.jsp'"> Si <i class="fa fa-check-square"></i></button>
+            <button type="button" class="btn btn-success btn-icon" data-dismiss="modal"  onclick="window.location.href='listaravanceformacion.jsp'" >Si <i class="fa fa-check-square"></i></button>
             <button type="button" class="btn btn-default" data-dismiss="modal" class="close" >No</button>
         </div>
       </div>
     </div>
   </div>
 </div>
+      
+          
+              
 <script src="js/jquery-2.1.0.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/common-script.js"></script>
@@ -166,7 +206,5 @@
 <script src="js/jquery.slimscroll.min.js"></script>
 <script src="plugins/scroll/jquery.nanoscroller.js"></script>
 
-
-
-</body>
+    </body>
 </html>

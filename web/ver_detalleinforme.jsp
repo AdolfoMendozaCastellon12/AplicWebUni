@@ -1,13 +1,9 @@
 <%-- 
-    Document   : tipoempleado
-    Created on : 18/08/2017, 03:00:26 PM
+    Document   : detalleinforme
+    Created on : 16/08/2017, 01:57:13 PM
     Author     : Estudiante
 --%>
 
-<%@page import="java.util.ArrayList"%>
-<%@page import="java.util.List"%>
-<%@page import="com.AplicWebUniSena.modelo.TipoEmpleado"%>
-<%@page import="com.AplicWebUniSena.dao.TipoEmpDaoImpl"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -25,14 +21,10 @@
         <link rel="stylesheet" href="plugins/scroll/nanoscroller.css">
         <link href="plugins/morris/morris.css" rel="stylesheet" />
     </head>
-    <%
-      TipoEmpDaoImpl dao = new TipoEmpDaoImpl();
-      List<TipoEmpleado> listCategoria = new ArrayList();
-      listCategoria = dao.listar();
-      
-      
-   %>
-   <body style="background-image: url(images/descarga.jpg);">
+   
+        
+
+    <body style="background-image: url(images/descarga.jpg);">
 
   <!--\\\\\\\ wrapper Start \\\\\\-->
 
@@ -54,48 +46,41 @@
           <div class="block-web">
             <div class="header">
               
-              <h3 class="content-header">VER TIPO EMPLEADO</h3>
+              <h3 class="content-header">VER DETALLE INFORME</h3>
             </div>
             <div class="porlets-content">
-                <%
-                TipoEmpleado tipoemp = (TipoEmpleado) request.getAttribute("tipoemp");
-                //String id = String.valueOf(prod.getIdCategoria());
-                %>
-                <form action="tipoempsvl" method="post" class="form-horizontal row-border">
+              <form action="" class="form-horizontal row-border">
                 <div class="form-group">
-                  <label class="col-sm-3 control-label">Codigo Tipo Empleado</label>
+                  <label class="col-sm-3 control-label">Codigo Detalle Informe</label>
                   <div class="col-sm-9">
-                      <input type="text" class="form-control" disabled="" value='<%= tipoemp.getIdTipoEmp() %>' name="codtipoe" >
+                      <input type="text" class="form-control" disabled="">
                   </div>
                 </div><!--/form-group--> 
 
                 <div class="form-group">
-                  <label class="col-sm-3 control-label">Descripción</label>
+                  <label class="col-sm-3 control-label">Actividades Desarrolladas</label>
                   <div class="col-sm-9">
-                      <input type="text" class="form-control" disabled="" value="<%= tipoemp.getSuc_Descrip() %>" name="descripcion" >
+                      <input type="password" class="form-control" disabled="">
                   </div>
                 </div><!--/form-group--> 
                 
-
                 <div class="form-group">
-                  <label class="col-sm-3 control-label">Estado</label>
+                  <label class="col-sm-3 control-label">Fecha Ejecutadas</label>
                   <div class="col-sm-9">
-                      <select name="estado" disabled="">
-                          <option selected><%= tipoemp.getSuc_Estado()%></option>
-                                <%
-                                    if(tipoemp.getSuc_Estado().equals("Activo")){
-                                        %><option value="Inactivo">Inactivo</option> <%
-                                    }else{
-                                        %><option value="Activo">Activo</option> <%
-                                    }
-                                %>
-                      </select>
+                      <input type="text" class="form-control" disabled="">
+                  </div>
+                </div><!--/form-group--> 
+                
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">Población Impactada</label>
+                  <div class="col-sm-9">
+                      <input type="text" class="form-control" disabled="">
                   </div>
                 </div><!--/form-group-->
                 
                 <div class="bottom">
-                  <button type="button" class="btn btn-success btn-icon"onclick="window.location.href='listartipoempleado.jsp'"> Atras<i class="fa fa-check-square"></i> </button>
-                 
+                  <button type="button" class="btn btn-success btn-icon" onclick="window.location.href='listardetalleinforme.jsp'"> Atras<i class="fa fa-check-square"></i> </button>
+                  
                 </div>
                <!--/form-group-->
               </form>
@@ -146,5 +131,5 @@
 
 
 
-</body>
+    </body>
 </html>

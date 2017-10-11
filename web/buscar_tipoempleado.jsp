@@ -1,9 +1,14 @@
-
+<%-- 
+    Document   : listartipoempleado
+    Created on : 15/08/2017, 06:26:23 PM
+    Author     : FLIACHICA
+--%>
 <%@page import="com.AplicWebUniSena.modelo.TipoEmpleado"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 <%@page import="com.AplicWebUniSena.dao.TipoEmpDaoImpl"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -19,11 +24,7 @@
         <link rel="stylesheet" href="plugins/scroll/nanoscroller.css">
         <link href="plugins/morris/morris.css" rel="stylesheet" />
     </head>
-    <%
-      TipoEmpDaoImpl dao = new TipoEmpDaoImpl();
-      List<TipoEmpleado> listTipoEmp = new ArrayList();
-      
-   %>
+    
     <body style="background-image: url(images/descarga.jpg);">
         <div class="pull-left breadcrumb_admin clear_both">
             
@@ -50,7 +51,7 @@
                   <form class="form-inline" action="tipoempsvl" method="get">
                     <label class="sr-only" for="inlineFormCustomSelect">Parametro</label>
                     <select class="form-control" id="inlineFormCustomSelect" name="idBusqueda">
-                      <!--  <option value="0" selected>- Seleccione -</option> -->
+                       <!-- <option value="0" selected>- Seleccione -</option> -->
                       <option value="1">Código Tipo Empleado</option>
                       <option value="2">Descripción</option>
                       <option value="3">Estado</option>
@@ -85,8 +86,12 @@
                               </thead>
                               <tbody>
                                   <%
-                      listTipoEmp = dao.listar();
-                      for(TipoEmpleado te : listTipoEmp){
+                      if(request.getAttribute("listTipoempleado")!=null){
+                      List<TipoEmpleado> listTipoempleado = new ArrayList();
+                      listTipoempleado= (List<TipoEmpleado>) request.getAttribute("listTipoempleado");
+                      
+                      
+                      for(TipoEmpleado te : listTipoempleado){
                    %>
                               <tr class="">
                                   <td><%= te.getIdTipoEmp()%></td>
@@ -114,7 +119,12 @@
                                 <input type="hidden" name="cod" value='<%= te.getIdTipoEmp()%>'/>
                             </form>                  </td>
                               </tr>
-                             <% } %>
+                             <% 
+                             }
+                    }else{
+                        out.println("No se encontro registro");
+                    }
+                             %>
                               </tbody>
                           </table>
                       </div>

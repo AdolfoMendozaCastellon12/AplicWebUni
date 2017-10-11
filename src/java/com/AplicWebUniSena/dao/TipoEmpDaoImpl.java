@@ -6,7 +6,7 @@
 package com.AplicWebUniSena.dao;
 
 import com.AplicWebUniSena.bd.ConectarDB;
-import com.AplicWebUniSena.modelo.tipoempleado;
+import com.AplicWebUniSena.modelo.TipoEmpleado;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -22,7 +22,7 @@ public class TipoEmpDaoImpl implements IDAO{
     PreparedStatement psmt = null;
     ResultSet rs = null;
     String respuesta = null;
-    tipoempleado TipoEmp;
+    TipoEmpleado tipoemp;
     
     public TipoEmpDaoImpl() {
         con = new ConectarDB();
@@ -35,16 +35,17 @@ public class TipoEmpDaoImpl implements IDAO{
     
     @Override
     public String insertar(Object obj) throws SQLException {
-        tipoempleado objTipoEmp =  (tipoempleado) obj;
+        TipoEmpleado objTipoEmp =  (TipoEmpleado) obj;
         try {
-            psmt = con.conectar().prepareStatement("INSERT INTO suc_tipoemp VALUES (?,?,?)");
+            psmt = con.conectar().prepareStatement("INSERT INTO suc_tipoemp VALUES (?,?,?,?)");
             psmt.setInt(1, objTipoEmp.getIdTipoEmp());
             psmt.setString(2, objTipoEmp.getSuc_Descrip());
             psmt.setString(3, objTipoEmp.getSuc_Estado());
+            psmt.setInt(4, objTipoEmp.getSuc_Elimina());
             psmt.executeUpdate();
             respuesta = "El registro se realizo con exito";
             
-        } catch (Exception e) {
+        } catch (SQLException e) {
             throw new SQLException("Error al registrar: " + e.toString());
         }finally{
             if(psmt!=null){
@@ -60,24 +61,62 @@ public class TipoEmpDaoImpl implements IDAO{
 
     @Override
     public String eliminar(Object obj) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        TipoEmpleado objTipoEmp = (TipoEmpleado) obj;
+        try {
+            psmt = con.conectar().prepareStatement("UPDATE suc_tipoemp SET Suc_Elimina=? WHERE idTipoEmp=?");
+            psmt.setString(1, "0");
+            psmt.setInt(2, objTipoEmp.getIdTipoEmp());
+            psmt.executeUpdate();
+            respuesta = "Se elimino el registro con exito";
+        } catch (SQLException e) {
+            throw new SQLException("Error al Eliminar: " + e.toString()); 
+        }finally{
+            if(psmt!=null){
+                psmt.close();
+            }
+            
+            con.desconectar();
+            
+        }
+        return respuesta;
     }
+    
 
     @Override
     public String modificar(Object obj) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        TipoEmpleado objTipoEmpleado = (TipoEmpleado) obj;
+        try {
+            psmt = con.conectar().prepareStatement("UPDATE suc_tipoemp SET Suc_Descrip=?, Suc_Estado=? WHERE idTipoEmp=?");
+            psmt.setString(1, objTipoEmpleado.getSuc_Descrip());
+            psmt.setString(2, objTipoEmpleado.getSuc_Estado());
+            psmt.setDouble(3, objTipoEmpleado.getIdTipoEmp());
+
+            psmt.executeUpdate();
+            respuesta = "El registro se actualizo con exito";
+        } catch (Exception e) {
+            throw new SQLException("Error al registrar: " + e.toString());
+        }finally{
+            if(psmt!=null){
+                psmt.close();
+            }
+            
+            con.desconectar();
+            
+        }
+        return respuesta;
+        }
+    
 
     @Override
-    public List<tipoempleado> listar() throws SQLException {
-        List<tipoempleado> listatipoe = new ArrayList<>();
+    public List<TipoEmpleado> listar() throws SQLException {
+        List<TipoEmpleado> listatipoe = new ArrayList<>();
         try {
-            psmt = con.conectar().prepareStatement("SELECT * FROM suc_tipoemp");
+            psmt = con.conectar().prepareStatement("SELECT * FROM suc_tipoemp WHERE Suc_Elimina='1'");
             rs = psmt.executeQuery();
             while (rs.next()) {                
-                listatipoe.add(tipoempleado.load(rs));
+                listatipoe.add(TipoEmpleado.load(rs));
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println("Error en la consulta: " + e);
         }finally{
             if(psmt!=null){
@@ -95,7 +134,28 @@ public class TipoEmpDaoImpl implements IDAO{
 
     @Override
     public Object buscarPorID(String id) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    try {
+            psmt = con.conectar().prepareStatement("SELECT * FROM suc_tipoemp WHERE idTipoEmp=?");
+            psmt.setString(1,id);
+            rs = psmt.executeQuery();
+            while (rs.next()) {                
+                
+                tipoemp =  TipoEmpleado.load(rs);
+            }
+        } catch (SQLException e) {
+            System.out.println("Error en la consulta: " + e);
+        }finally{
+            if(psmt!=null){
+                psmt.close();
+            }
+            if(rs!=null){
+                rs.close();
+            }
+            
+            con.desconectar();
+        }
+        
+       return tipoemp;
     }
 
     @Override
@@ -110,8 +170,53 @@ public class TipoEmpDaoImpl implements IDAO{
 
     @Override
     public List<?> busquedaPorParametro(String field, Object param) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    List<TipoEmpleado> listaBusquedaTipoE = new ArrayList<>();
+        TipoEmpleado tipoe = (TipoEmpleado) param;
+        int item = Integer.valueOf(field);
+        String sql = null;
+        try{
+        switch (item) {
+            case 0:
+                sql="SELECT * FROM suc_tipoemp";
+                psmt=con.conectar().prepareStatement(sql);
+                break;
+             case 1:
+                sql="SELECT * FROM suc_tipoemp WHERE idTipoEmp LIKE ?";
+                psmt=con.conectar().prepareStatement(sql);
+                psmt.setInt(1, tipoe.getIdTipoEmp());
+                break;
+            case 2:
+                sql="SELECT * FROM suc_tipoemp WHERE Suc_Descrip LIKE ?";
+                psmt=con.conectar().prepareStatement(sql);
+                psmt.setString(1, tipoe.getSuc_Descrip());
+                break;
+            case 3:
+                sql="SELECT * FROM suc_tipoemp WHERE Suc_Estado LIKE ?";
+                psmt=con.conectar().prepareStatement(sql);
+                psmt.setString(1, tipoe.getSuc_Estado());
+                break;
+            
+            default:
+                throw new AssertionError();
+        }
+        rs = psmt.executeQuery();
+        while(rs.next()){
+        listaBusquedaTipoE.add(TipoEmpleado.load(rs));
+        }
+        }catch(SQLException e){
+            System.out.println("Error en la consulta: " + e);
+        }finally{
+        if(psmt!=null){
+        psmt.close();
+        }
+        if(rs!=null){
+        rs.close();
+        }
+        con.desconectar();
+        }
+        return listaBusquedaTipoE;
     }
+    
 
     @Override
     public List<?> existeUsuario(String usuario, String clave) throws Exception {
@@ -120,7 +225,34 @@ public class TipoEmpDaoImpl implements IDAO{
 
     @Override
     public String generarCodigo() throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String codigo = null;
+        try {
+            psmt=con.conectar().prepareStatement("SELECT COUNT(idTipoEmp) FROM suc_tipoemp");
+            rs=psmt.executeQuery();
+//           int resultado= 1+ Integer.parseInt(rs.getString(1));
+            
+           
+           while(rs.next()){
+                int resultado= Integer.valueOf(rs.getString(1)) + 1;
+                codigo="" + resultado;
+               
+         }
+           
+           
+        } catch (SQLException e) {
+            throw new SQLException("Error al generar código: "+e.toString());
+        } finally{
+        if(psmt!=null){
+        psmt.close();
+        }
+        if(rs!=null){
+        rs.close();
+        }
+        con.desconectar();  
+
+        }
+         return codigo;
     }
+    
     
 }

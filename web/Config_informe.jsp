@@ -1,38 +1,27 @@
 <%-- 
-    Document   : tipoempleado
-    Created on : 18/08/2017, 03:00:26 PM
+    Document   : informe
+    Created on : 16/08/2017, 03:11:59 PM
     Author     : Estudiante
 --%>
 
-<%@page import="java.util.ArrayList"%>
-<%@page import="java.util.List"%>
-<%@page import="com.AplicWebUniSena.modelo.TipoEmpleado"%>
-<%@page import="com.AplicWebUniSena.dao.TipoEmpDaoImpl"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>ULTIMO Admin Dashboard Template</title>
-        <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+<title>ULTIMO Admin Dashboard Template</title>
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
-        <link href="css/font-awesome.css" rel="stylesheet" type="text/css" />
-        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <link href="css/animate.css" rel="stylesheet" type="text/css" />
-        <link href="css/admin.css" rel="stylesheet" type="text/css" />
-        <link href="css/jquerysctipttop.css" rel="stylesheet" type="text/css">
-        <link href="plugins/kalendar/kalendar.css" rel="stylesheet">
-        <link rel="stylesheet" href="plugins/scroll/nanoscroller.css">
-        <link href="plugins/morris/morris.css" rel="stylesheet" />
+<link href="css/font-awesome.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="css/animate.css" rel="stylesheet" type="text/css" />
+<link href="css/admin.css" rel="stylesheet" type="text/css" />
+<link href="css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+<link href="plugins/kalendar/kalendar.css" rel="stylesheet">
+<link rel="stylesheet" href="plugins/scroll/nanoscroller.css">
+<link href="plugins/morris/morris.css" rel="stylesheet" />
     </head>
-    <%
-      TipoEmpDaoImpl dao = new TipoEmpDaoImpl();
-      List<TipoEmpleado> listCategoria = new ArrayList();
-      listCategoria = dao.listar();
-      
-      
-   %>
-   <body style="background-image: url(images/descarga.jpg);">
+    <body style="background-image: url(images/descarga.jpg);">
 
   <!--\\\\\\\ wrapper Start \\\\\\-->
 
@@ -54,48 +43,45 @@
           <div class="block-web">
             <div class="header">
               
-              <h3 class="content-header">VER TIPO EMPLEADO</h3>
+              <h3 class="content-header">CONFIGURAR INFORME</h3>
             </div>
             <div class="porlets-content">
-                <%
-                TipoEmpleado tipoemp = (TipoEmpleado) request.getAttribute("tipoemp");
-                //String id = String.valueOf(prod.getIdCategoria());
-                %>
-                <form action="tipoempsvl" method="post" class="form-horizontal row-border">
+              <form action="" class="form-horizontal row-border">
                 <div class="form-group">
-                  <label class="col-sm-3 control-label">Codigo Tipo Empleado</label>
+                  <label class="col-sm-3 control-label">Codigo Informe</label>
                   <div class="col-sm-9">
-                      <input type="text" class="form-control" disabled="" value='<%= tipoemp.getIdTipoEmp() %>' name="codtipoe" >
+                      <input type="text" class="form-control" disabled="">
                   </div>
                 </div><!--/form-group--> 
 
                 <div class="form-group">
-                  <label class="col-sm-3 control-label">Descripción</label>
+                  <label class="col-sm-3 control-label">Fecha Registro</label>
                   <div class="col-sm-9">
-                      <input type="text" class="form-control" disabled="" value="<%= tipoemp.getSuc_Descrip() %>" name="descripcion" >
+                    <input type="date" class="form-control">
                   </div>
                 </div><!--/form-group--> 
                 
-
+                <div class="form-group">
+                  <label class="col-sm-3 control-label">Fecha Informe</label>
+                  <div class="col-sm-9">
+                    <input type="date" class="form-control">
+                  </div>
+                </div><!--/form-group--> 
+                
                 <div class="form-group">
                   <label class="col-sm-3 control-label">Estado</label>
                   <div class="col-sm-9">
-                      <select name="estado" disabled="">
-                          <option selected><%= tipoemp.getSuc_Estado()%></option>
-                                <%
-                                    if(tipoemp.getSuc_Estado().equals("Activo")){
-                                        %><option value="Inactivo">Inactivo</option> <%
-                                    }else{
-                                        %><option value="Activo">Activo</option> <%
-                                    }
-                                %>
+                      <select name="estado">
+                          <option>Seleccione</option>
+                          <option>Activo</option>
+                          <option>Inactivo</option>
                       </select>
                   </div>
                 </div><!--/form-group-->
                 
                 <div class="bottom">
-                  <button type="button" class="btn btn-success btn-icon"onclick="window.location.href='listartipoempleado.jsp'"> Atras<i class="fa fa-check-square"></i> </button>
-                 
+                  <button type="button" class="btn btn-success btn-icon"> Aceptar<i class="fa fa-check-square"></i> </button>
+                  <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal" >Cancelar</button>
                 </div>
                <!--/form-group-->
               </form>
@@ -110,6 +96,29 @@
       <!--\\\\\\\ container  end \\\\\\-->
         </div>
       
+          <div class="modal fade" id="myModal" role="dialog" >
+    <div class="modal-dialog modal-dialog" >
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h2 class="modal-title">Mensaje de Advertencia <i class="fa fa-exclamation"></i> </h2>
+        </div>
+        <div class="modal-body center"> 
+            <p><h5>¿Estas seguro de que quieres cancelar? 
+                <br>
+              se perderan los cambios realizados
+            </h5>
+   
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-success btn-icon" data-dismiss="modal" onclick="window.location.href='listarinforme.jsp'" >Si <i class="fa fa-check-square"></i></button>
+            <button type="button" class="btn btn-default" data-dismiss="modal" class="close" >No</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
 <script src="js/jquery-2.1.0.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/common-script.js"></script>

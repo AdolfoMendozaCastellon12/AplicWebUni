@@ -20,8 +20,9 @@
 <link href="plugins/kalendar/kalendar.css" rel="stylesheet">
 <link rel="stylesheet" href="plugins/scroll/nanoscroller.css">
 <link href="plugins/morris/morris.css" rel="stylesheet" />
+
     </head>
-    <body style="background-color: #f1f1f1;">
+    <body style="background-image: url(images/descarga.jpg);">
 
   <!--\\\\\\\ wrapper Start \\\\\\-->
 
@@ -53,7 +54,7 @@
                   <li><a data-toggle="tab" href="#ptab4"><span>Avance: </span>Parte 4</a></li>
                 </ul>
                 <div class="tab-content">
-                   <div id="ptab1" class="tab-pane">
+                   <div id="ptab1" class="tab-pane active" >
                       <div class="progress progress-striped">
                  <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="45" role="progressbar" class="progress-bar" style="width: 23%;"></div>
                   </div>
@@ -102,6 +103,12 @@
                                   </button>
                               </div> 
                  </div>
+              <!--   <div class="col-lg-12">
+            <a class="list-group-item active" >
+                <h4 class="list-group-item-heading">Objeto.</h4>
+                <p class="list-group-item-text">Prestar los servicios profesionales personales de carácter temporal, como instructor para impartir formación profesional integral en la modalidad de formación titulada y/o complementaria, así como brindar apoyo cuando se requiera , en la actualización y/o elaboración de diseños curriculares, asesoría en formulación de planes de negocio, en el montaje de unidades productivas, seguimiento a las empresas creadas, en ejercicios de investigación aplicada y en las demás actividades requeridas por la entidad, para dar cumplimiento al convenio de ampliación de cobertura en el marco de la formación por competencias y el aprendizaje por proyectos.</p>
+              </a>
+                  </div> -->
                  
                       <div class="col-md-12">
           <div class="block-web">
@@ -148,7 +155,7 @@
                 </ul>
            </div><!--/porlets-content-->  
           </div> 
-                  <div id="ptab2" class="tab-pane active">
+                  <div id="ptab2" class="tab-pane">
                       <div class="progress progress-striped">
                  <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="45" role="progressbar" class="progress-bar" style="width: 47%;"></div>
                   </div>
@@ -165,6 +172,12 @@
                         <label class="col-sm-4">Actividades desarrolladas en el mes </label>
                         <div class="col-sm-5">
                           <input type="number" class="form-control" name="lastname" placeholder="0">
+                        </div>
+                      </div>
+                        <div class="form-group">
+                        <label class="col-sm-4">Fecha de ejecución </label>
+                        <div class="col-sm-5">
+                          <input type="text" class="form-control" name="firstname">
                         </div>
                       </div>
                       <div class="form-group">
@@ -199,12 +212,13 @@
                               </div> 
                     </div>
                       
-                      <div class="col-lg-12">
+                 <!--     <div class="col-lg-12">
             <a class="list-group-item active" >
-                <h4 class="list-group-item-heading">Objeto.</h4>
-                <p class="list-group-item-text">Prestar los servicios profesionales personales de carácter temporal, como instructor para impartir formación profesional integral en la modalidad de formación titulada y/o complementaria, así como brindar apoyo cuando se requiera , en la actualización y/o elaboración de diseños curriculares, asesoría en formulación de planes de negocio, en el montaje de unidades productivas, seguimiento a las empresas creadas, en ejercicios de investigación aplicada y en las demás actividades requeridas por la entidad, para dar cumplimiento al convenio de ampliación de cobertura en el marco de la formación por competencias y el aprendizaje por proyectos.</p>
+                <h4 class="list-group-item-heading">Avance de la formación</h4>
+                <p class="list-group-item-text">Avance consolidado por programa de formación del convenio de acuerdo a la ejecución de las competencias de la fase lectiva</p>
               </a>
-                  </div>
+                  </div> -->
+                      
                       <div class="col-md-12">
           <div class="block-web">
             <div class="header">
@@ -227,7 +241,7 @@
                   <thead>
                     <tr role="row"><th class="sorting_disabled" role="columnheader" rowspan="1" colspan="1" aria-label="" style="width: 7px;"></th>
                         <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="hidden-table-info" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 148px;">No. de Ficha</th>
-                        <th class="sorting" role="columnheader" tabindex="0" aria-controls="hidden-table-info" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 205px;">Actividades desarrolladas en el mes</th>
+                        <th class="sorting" role="columnheader" tabindex="0" aria-controls="hidden-table-info" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 205px;">Actividades desarrolladas en el mes</th> <th class="sorting" role="columnheader" tabindex="0" aria-controls="hidden-table-info" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 205px;">Fecha de ejecución</th>
                         <th class="hidden-phone sorting" role="columnheader" tabindex="0" aria-controls="hidden-table-info" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending" style="width: 125px;">Población impactada</th><th class="hidden-phone sorting" role="columnheader" tabindex="0" aria-controls="hidden-table-info" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 87px;">Estrategia empleada</th><th class="hidden-phone sorting" role="columnheader" tabindex="0" aria-controls="hidden-table-info" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending" style="width: 125px;">Lugar de ejecución </th></tr>
                   </thead>
                   
@@ -235,6 +249,7 @@
                       <td class="  sorting_1"></td>
                       <td class=" "></td>
                       <td class="center hidden-phone ">-</td>
+                      <td class=" "></td>
                       <td class="center hidden-phone ">A</td>
                        <td class="center hidden-phone ">A</td>
                     
@@ -336,12 +351,7 @@
                               </div>   
                       </div>
                       
-                          <div class="col-lg-12">
-            <a class="list-group-item active" >
-                <h4 class="list-group-item-heading">Avance de la formación</h4>
-                <p class="list-group-item-text">Avance consolidado por programa de formación del convenio de acuerdo a la ejecución de las competencias de la fase lectiva</p>
-              </a>
-                  </div>
+                          
                        <div class="col-md-12">
           <div class="block-web">
             <div class="header">
@@ -488,13 +498,7 @@
                                   </button>
                               </div>   
                       </div>
-                      
-                          <div class="col-lg-12">
-            <a class="list-group-item active" >
-                <h4 class="list-group-item-heading">Avance de la formación</h4>
-                <p class="list-group-item-text">Avance consolidado por programa de formación del convenio de acuerdo a la ejecución de las competencias de la fase lectiva</p>
-              </a>
-                  </div>
+     
                        <div class="col-md-12">
           <div class="block-web">
             <div class="header">
